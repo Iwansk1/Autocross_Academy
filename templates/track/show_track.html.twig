@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Track</title>
+</head>
+<body>
+    <button><a href="{{ path('view_tracks') }}"><- Back to Tracks</a></button>
+    <h1>Track Details</h1>
+    <div>
+        <h2>{{ track.getTrackName() }}</h2>
+        <p><strong>Track ID:</strong> {{ track.getTrackID() }}</p>
+        <p><strong>Distance:</strong> {{ track.getTrackDistance() }} meters</p>
+        <p><strong>Surface:</strong> {{ track.getTrackSurface() }}</p>
+        <img src="{{ asset('images/track_images/' ~ track.getId() ~ '.png') }}" alt="{{ track.getTrackName() }} Image">
+    </div>
+</body>
+</html>
+
+<style>
+    button {
+        padding: 16px;
+    }
+</style>

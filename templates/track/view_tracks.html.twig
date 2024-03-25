@@ -1,0 +1,60 @@
+{# templates/track/view_tracks.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Tracks</title>
+</head>
+<body>
+    <h1>List of Tracks</h1>
+    <div class="main">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Track ID</th>
+                    <th>Name</th>
+                    <th>Distance</th>
+                    <th>Surface</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for track in tracks %}
+                <tr>
+                    <td>{{ track.getTrackID() }}</td>
+                    <td>{{ track.getTrackName() }}</td>
+                    <td>{{ track.getTrackDistance() }} meters</td>
+                    <td>{{ track.getTrackSurface() }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% for track in tracks %}
+        <a class="btn" href="{{ path('show_track', {'id': track.getId()}) }}">View Track: <strong>{{track.getTrackName}}</strong></a>{# Link to view track details #}
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+
+<style>
+    table{
+        margin-bottom: 20px;
+    }
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    a{
+        padding: 8px;
+        text-decoration: none;
+        color: black;
+        background-color: lightgray;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    a:hover{
+        background-color: darkgray;
+    }
+    tr{
+        font-size: 1.1rem;
+    }
+</style>

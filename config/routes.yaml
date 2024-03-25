@@ -1,3 +1,7 @@
+show_track:
+    path: '/track/{id}'
+    controller: 'App\Controller\TrackController::showTrack'
+
 controllers:
     resource:
         path: ../src/Controller/

@@ -1,0 +1,15 @@
+{# templates/track/index.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Information</title>
+</head>
+<body>
+    <h1>Track Information</h1>
+    <p>Name: {{ track.TrackName }}</p>
+    <p>Distance: {{ track.TrackDistance }} meters</p>
+    <p>Surface: {{ track.TrackSurface }}</p>
+    <img src="{{ asset('Autocross_Academy/public/images/track_images/Pieterzijl.png') }}" alt="Track Image">
+    {# Add more fields as needed #}
+</body>
+</html>
